@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Suffix Station: French Grammar Rush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen active">
+      <div class="content-wrapper">
+        <div class="logo-area">
+          <span class="logo-emoji">⚡️</span>
+        </div>
+        <h1>Suffix Station</h1>
+        <p class="subtitle">The French Grammar Rush</p>
+        <div class="instructions">
+          <p>Beat the clock. Match the grammatical patterns.</p>
+          <p>3 strikes and you're out.</p>
+        </div>
+        <button id="btn-start" class="btn-primary">Start Rush</button>
+      </div>
+    </div>
+
+    <!-- Main Game Scene -->
+    <div id="game-scene" class="screen">
+      <header class="game-header">
+        <div class="score-board">
+          <span class="score-label">SCORE</span>
+          <span id="score-value">0</span>
+        </div>
+        <!-- Streak Indicator -->
+        <div id="streak-indicator" class="hidden">
+          🔥 STREAK <span id="streak-count">3</span>
+        </div>
+        <div class="strikes-board">
+          <span id="strike-1" class="strike">❌</span>
+          <span id="strike-2" class="strike">❌</span>
+          <span id="strike-3" class="strike">❌</span>
+        </div>
+      </header>
+
+      <!-- Timer Bar -->
+      <div class="timer-container">
+        <div id="timer-bar"></div>
+      </div>
+
+      <!-- Quiz UI -->
+      <div id="quiz-ui">
+        <div class="question-container">
+          <h2 id="question-text">Loading...</h2>
+        </div>
+        <div id="options-container">
+          <!-- Options injected here -->
+        </div>
+        <div id="explanation-box" class="hidden">
+          <p id="explanation-text"></p>
+          <button id="btn-next" class="btn-secondary mt-2">Next Question →</button>
+        </div>
+      </div>
+
+      <!-- Floating Score Feedback -->
+      <div id="feedback-container"></div>
+    </div>
+
+    <!-- End Screen -->
+    <div id="end-screen" class="screen">
+      <div class="content-wrapper">
+        <h1 id="end-title">Game Over</h1>
+        <div class="score-card">
+          <div class="score-row">
+            <span>Final Score:</span>
+            <span id="final-score" class="score-val">0</span>
+          </div>
+          <div class="score-row pb-2 border-b">
+            <span>Max Streak:</span>
+            <span id="max-streak" class="score-val">0🔥</span>
+          </div>
+          <p id="end-message" class="end-msg">Keep practicing your vocabulary multipliers!</p>
+        </div>
+        <div class="share-actions">
+          <button id="btn-play-again" class="btn-secondary">Play Again</button>
+          <button id="btn-share" class="btn-primary">📤 Share Score</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/game.js"></script>
+</body>
+
+</html>

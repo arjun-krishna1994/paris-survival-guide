@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Le Café Parisien: The Negotiation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="content-wrapper">
+                <h1>Le Café Parisien</h1>
+                <p class="subtitle">Survive the Parisian Waiter</p>
+                <div class="npc-selection">
+                    <h3>Choose your Waiter (Difficulty)</h3>
+                    <div id="npc-cards"></div>
+                </div>
+                <button id="btn-start" class="btn-primary" disabled>Start Negotiation</button>
+            </div>
+        </div>
+
+        <!-- Level Intro Screen -->
+        <div id="level-intro-screen" class="screen">
+            <div class="content-wrapper">
+                <h2 id="level-title">Level 1</h2>
+                <p id="level-desc" class="subtitle">The Setup</p>
+                <button id="btn-continue-level" class="btn-primary">Ready</button>
+            </div>
+        </div>
+
+        <!-- Main Game Scene -->
+        <div id="game-scene" class="screen">
+            <!-- Header Stats -->
+            <header class="game-header">
+                <div class="stat-group">
+                    <span class="stat-label">RESPECT</span>
+                    <div class="progress-bar-container">
+                        <div id="bar-respect" class="progress-bar respect-bar"></div>
+                    </div>
+                </div>
+                <div class="stat-group">
+                    <span class="stat-label">PATIENCE</span>
+                    <div class="progress-bar-container">
+                        <div id="bar-patience" class="progress-bar patience-bar"></div>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <button id="btn-undo" class="ctrl-btn" title="Undo (3 left)">↺ <span id="undo-count">3</span></button>
+                </div>
+            </header>
+
+            <!-- Floating Feedback Container -->
+            <div id="feedback-container"></div>
+
+            <!-- Focus area -->
+            <div class="scene-focus">
+                <div id="npc-avatar">👤</div>
+            </div>
+
+            <!-- Dialogue and Choices UI -->
+            <div id="dialogue-ui">
+                <div class="dialogue-box">
+                    <div id="speaker-name">Waiter</div>
+                    <div id="dialogue-text"></div>
+                    <!-- Feedback from previous choice appears here briefly -->
+                    <div id="cultural-feedback" class="hidden"></div>
+                </div>
+                <div id="choices-container">
+                    <!-- Choices injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen">
+            <div class="content-wrapper">
+                <h1 id="end-title">Game Over</h1>
+                <div class="score-card">
+                    <div class="score-row">
+                        <span>Final Respect:</span>
+                        <span id="final-respect" class="score-val">0</span>
+                    </div>
+                    <div class="score-row">
+                        <span>Rank:</span>
+                        <span id="final-rank" class="score-val rank-val">Un drame</span>
+                    </div>
+                    <p id="end-message" class="end-msg">You offended the waiter.</p>
+                </div>
+                <div class="share-actions">
+                    <button id="btn-play-again" class="btn-secondary">Play Again</button>
+                    <button id="btn-share" class="btn-primary">📤 Share Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>
